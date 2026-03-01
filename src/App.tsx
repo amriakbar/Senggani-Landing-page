@@ -11,6 +11,7 @@ const Navbar = () => (
     <div className="text-2xl font-serif font-bold tracking-tight">Kedai Senggani</div>
     <div className="hidden md:flex gap-8 text-xs uppercase tracking-widest font-sans font-semibold">
       <a href="#philosophy" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Filosofi</a>
+      <a href="#story" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Kisah</a>
       <a href="#menu" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Menu</a>
       <a href="#space" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Ruang</a>
       <a href="#testimonials" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Testimoni</a>
@@ -75,6 +76,49 @@ const Philosophy = () => (
             <h3 className="font-serif text-xl mb-2 italic text-[#001B3D]">Manual Brew</h3>
             <p className="text-sm text-[#001B3D]/50">Setiap cangkir diseduh dengan presisi dan hati.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const Story = () => (
+  <section id="story" className="py-32 px-6 bg-[#F8FAFC]" aria-labelledby="story-heading">
+    <div className="max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-20 items-center">
+        <div className="order-2 md:order-1 space-y-8">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-[#001B3D]/40 block font-sans font-bold">Asal Usul</span>
+          <h2 id="story-heading" className="text-5xl font-serif leading-tight text-[#001B3D]">
+            Kisah di Balik <span className="italic">Senggani</span>.
+          </h2>
+          <div className="space-y-6 text-lg text-[#001B3D]/70 leading-relaxed font-sans">
+            <p>
+              Berawal dari sebuah sudut kecil di Lawang, Malang, Kedai Senggani lahir dari kecintaan kami terhadap kesederhanaan. Nama "Senggani" diambil dari tanaman liar yang tangguh, melambangkan semangat kami untuk terus tumbuh meski dalam keterbatasan.
+            </p>
+            <p>
+              Kami tidak memulai ini sebagai bisnis besar, melainkan sebagai tempat pelarian bagi mereka yang merindukan percakapan jujur di atas secangkir kopi yang diseduh dengan hati.
+            </p>
+            <p className="italic font-serif text-[#001B3D]">
+              "Bagi kami, menyeduh bukan sekadar mengekstraksi rasa, tapi menghargai setiap tetes keringat petani yang menanamnya."
+            </p>
+          </div>
+        </div>
+        <div className="order-1 md:order-2 relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="aspect-square rounded-[40px] overflow-hidden shadow-2xl relative z-10"
+          >
+            <img 
+              src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=1000" 
+              alt="Suasana kedai kopi yang hangat" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
+          <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-[#FACC15]/10 rounded-full blur-3xl -z-10" />
         </div>
       </div>
     </div>
@@ -301,6 +345,7 @@ export default function App() {
       <main>
         <Hero />
         <Philosophy />
+        <Story />
         <Constraints />
         <Menu />
         <Testimonials />
