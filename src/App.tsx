@@ -8,8 +8,8 @@ import { Coffee, MapPin, Instagram, Clock, ZapOff, Users, CloudRain } from "luci
 
 const Navbar = () => (
   <nav className="fixed top-0 left-0 w-full z-50 px-6 py-8 flex justify-between items-center mix-blend-difference text-white" role="navigation" aria-label="Main Navigation">
-    <div className="text-2xl font-serif font-semibold tracking-tight">Ruang Seduh</div>
-    <div className="hidden md:flex gap-8 text-xs uppercase tracking-widest font-medium">
+    <div className="text-2xl font-serif font-bold tracking-tight">Kedai Senggani</div>
+    <div className="hidden md:flex gap-8 text-xs uppercase tracking-widest font-sans font-semibold">
       <a href="#philosophy" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Filosofi</a>
       <a href="#menu" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Menu</a>
       <a href="#space" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Ruang</a>
@@ -27,10 +27,10 @@ const Hero = () => (
       transition={{ duration: 0.8 }}
       className="max-w-4xl"
     >
-      <h1 id="hero-heading" className="text-7xl md:text-9xl font-serif font-light leading-none tracking-tight text-white mb-8">
-        Hanya <span className="italic">Kopi</span>,<br />Tanpa <span className="italic text-[#FACC15]">Distraksi</span>.
+      <h1 id="hero-heading" className="text-7xl md:text-9xl font-serif font-bold leading-none tracking-tight text-white mb-8">
+        Mampir di <span className="italic text-[#FACC15]">Senggani</span>.
       </h1>
-      <p className="text-lg md:text-xl font-sans text-white/70 max-w-xl mx-auto leading-relaxed">
+      <p className="text-lg md:text-xl font-sans font-light text-white/70 max-w-xl mx-auto leading-relaxed">
         Sebuah jeda kecil di tengah hiruk pikuk. Kami tidak punya Wi-Fi, tapi kami punya seduhan yang jujur.
       </p>
     </motion.div>
@@ -64,7 +64,7 @@ const Philosophy = () => (
           Fokus pada <span className="italic">Esensi</span>.
         </h2>
         <p className="text-lg text-[#001B3D]/70 leading-relaxed">
-          Di Ruang Seduh, kami percaya bahwa kopi terbaik lahir dari ketenangan. Kami tidak menyediakan makanan pendamping agar lidah Anda bisa sepenuhnya mengecap karakter unik dari setiap biji kopi yang kami pilih.
+          Di Kedai Senggani, kami percaya bahwa kopi terbaik lahir dari ketenangan. Kami tidak menyediakan makanan pendamping agar lidah Anda bisa sepenuhnya mengecap karakter unik dari setiap biji kopi yang kami pilih.
         </p>
         <div className="grid grid-cols-2 gap-8 pt-8 border-t border-[#001B3D]/10">
           <div>
@@ -124,25 +124,31 @@ const Menu = () => (
   <section id="menu" className="py-32 px-6 bg-[#F8FAFC]" aria-labelledby="menu-heading">
     <div className="max-w-3xl mx-auto">
       <div className="text-center mb-20">
-        <span className="text-[10px] uppercase tracking-[0.3em] text-[#001B3D]/40 mb-4 block">Daftar Seduhan</span>
-        <h2 id="menu-heading" className="text-6xl font-serif italic text-[#001B3D]">Hanya Minuman.</h2>
+        <span className="text-[10px] uppercase tracking-[0.3em] text-[#001B3D]/40 mb-4 block font-sans font-bold">Menu Unggulan</span>
+        <h2 id="menu-heading" className="text-6xl font-serif italic text-[#001B3D]">Signature Senggani.</h2>
       </div>
       
       <div className="space-y-12">
         {[
-          { name: "Manual Brew (V60/Aeropress)", price: "35k", desc: "Biji kopi musiman pilihan." },
-          { name: "Cold Brew", price: "38k", desc: "Diseduh 12 jam untuk rasa yang lembut." },
-          { name: "Kopi Susu Ruang", price: "30k", desc: "Signature blend dengan guna aren organik." },
-          { name: "Matcha Latte", price: "35k", desc: "Ceremonial grade matcha dari Uji." },
-          { name: "Artisan Tea", price: "32k", desc: "Pilihan teh bunga dan rempah." },
+          { name: "Kopi Susu Senggani", price: "9K", desc: "Signature blend dengan rasa yang otentik." },
+          { name: "Es Kopi Susu Panas Senggani", price: "11K", desc: "Sensasi unik kopi susu yang menyegarkan." },
+          { name: "Kopi Butter", price: "11K", desc: "Kombinasi gurih butter dan kopi pilihan." },
         ].map((item, i) => (
-          <div key={i} className="flex justify-between items-end border-b border-[#001B3D]/10 pb-4 group cursor-default" role="listitem">
+          <motion.div 
+            key={i} 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1, duration: 0.5 }}
+            className="flex justify-between items-end border-b border-[#001B3D]/10 pb-4 group cursor-default" 
+            role="listitem"
+          >
             <div>
-              <h3 className="text-2xl font-serif group-hover:italic transition-all text-[#001B3D]">{item.name}</h3>
-              <p className="text-sm text-[#001B3D]/40">{item.desc}</p>
+              <h3 className="text-2xl font-sans font-bold group-hover:italic transition-all text-[#001B3D]">{item.name}</h3>
+              <p className="text-sm font-sans text-[#001B3D]/40">{item.desc}</p>
             </div>
-            <span className="text-xl font-serif text-[#001B3D]">{item.price}</span>
-          </div>
+            <span className="text-xl font-sans font-bold text-[#001B3D]">{item.price}</span>
+          </motion.div>
         ))}
       </div>
     </div>
@@ -204,26 +210,26 @@ const MapSection = () => (
             Di Sudut <span className="italic">Tenang</span> Kota.
           </h2>
           <p className="text-lg text-[#001B3D]/70 leading-relaxed">
-            Kami berlokasi di area yang cukup tersembunyi untuk menjamin ketenangan Anda. Gunakan peta di samping untuk menemukan jalan menuju cangkir kopi Anda.
+            Kami berlokasi di area yang cukup tersembunyi untuk menjamin ketenangan Anda. Gunakan peta di samping untuk menemukan jalan menuju cangkir kopi Anda di Kedai Senggani.
           </p>
           <div className="space-y-4 pt-8 border-t border-[#001B3D]/10">
             <div className="flex items-start gap-4">
               <MapPin className="w-5 h-5 text-[#FACC15] mt-1" aria-hidden="true" />
               <div>
                 <h3 className="font-serif text-xl italic text-[#001B3D]">Alamat</h3>
-                <p className="text-sm text-[#001B3D]/50">Jl. Kenangan No. 7, Kecamatan Syahdu, Kota Tenang</p>
+                <p className="text-sm text-[#001B3D]/50">pujasera, Jl. Tawang Argo, Lawang, Kec. Lawang, Kabupaten Malang, Jawa Timur</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Clock className="w-5 h-5 text-[#FACC15] mt-1" aria-hidden="true" />
               <div>
                 <h3 className="font-serif text-xl italic text-[#001B3D]">Jam Buka</h3>
-                <p className="text-sm text-[#001B3D]/50">Senin - Minggu, 08:00 - 22:00</p>
+                <p className="text-sm text-[#001B3D]/50">Setiap Hari, 09:00 - 00:00</p>
               </div>
             </div>
           </div>
           <a 
-            href="https://maps.google.com" 
+            href="https://www.google.com/maps/search/?api=1&query=pujasera+Jl.+Tawang+Argo+Lawang+Malang" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block bg-[#001B3D] text-white px-8 py-4 rounded-full text-sm uppercase tracking-widest hover:bg-[#FACC15] hover:text-[#001B3D] transition-all focus:outline-none focus:ring-4 focus:ring-[#FACC15]/50"
@@ -234,8 +240,8 @@ const MapSection = () => (
         
         <div className="relative aspect-square md:aspect-auto md:h-[600px] rounded-[40px] overflow-hidden shadow-2xl order-1 md:order-2">
           <iframe 
-            title="Lokasi Ruang Seduh di Google Maps"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.287733470354!2d106.8246893147691!3d-6.22573299549326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e4a2e6f9f7%3A0x2e69f3e4a2e6f9f7!2sJakarta%20Indonesia!5e0!3m2!1sen!2sid!4v1625123456789!5m2!1sen!2sid" 
+            title="Lokasi Kedai Senggani di Google Maps"
+            src="https://maps.google.com/maps?q=pujasera%20Jl.%20Tawang%20Argo%20Lawang%20Malang&t=&z=17&ie=UTF8&iwloc=&output=embed" 
             className="w-full h-full border-0 grayscale contrast-[1.2] opacity-90"
             allowFullScreen={true} 
             loading="lazy"
@@ -252,8 +258,8 @@ const Footer = () => (
   <footer className="bg-white py-20 px-6 border-t border-[#001B3D]/5" role="contentinfo">
     <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-12">
       <div className="col-span-2 space-y-6">
-        <h2 className="text-4xl font-serif italic text-[#001B3D]">Ruang Seduh</h2>
-        <p className="text-[#001B3D]/50 max-w-sm">
+        <h2 className="text-4xl font-serif font-bold italic text-[#001B3D]">Kedai Senggani</h2>
+        <p className="text-[#001B3D]/50 max-w-sm font-sans">
           Tempat kecil untuk jiwa yang besar. Datanglah untuk kopi, pulanglah dengan ketenangan.
         </p>
         <div className="flex gap-4">
@@ -267,24 +273,23 @@ const Footer = () => (
       </div>
       
       <div className="space-y-4">
-        <h4 className="text-xs uppercase tracking-widest font-bold text-[#001B3D]/30">Jam Operasional</h4>
-        <ul className="space-y-2 text-sm text-[#001B3D]/70">
-          <li className="flex justify-between"><span>Senin - Jumat</span> <span>08:00 - 20:00</span></li>
-          <li className="flex justify-between"><span>Sabtu - Minggu</span> <span>10:00 - 22:00</span></li>
+        <h4 className="text-xs uppercase tracking-widest font-bold text-[#001B3D]/30 font-sans">Jam Operasional</h4>
+        <ul className="space-y-2 text-sm text-[#001B3D]/70 font-sans">
+          <li className="flex justify-between"><span>Setiap Hari</span> <span>09:00 - 00:00</span></li>
         </ul>
       </div>
       
       <div className="space-y-4">
-        <h4 className="text-xs uppercase tracking-widest font-bold text-[#001B3D]/30">Lokasi</h4>
-        <p className="text-sm leading-relaxed text-[#001B3D]/70">
-          Jl. Kenangan No. 7<br />
-          Kecamatan Syahdu, Kota Tenang<br />
-          Indonesia
+        <h4 className="text-xs uppercase tracking-widest font-bold text-[#001B3D]/30 font-sans">Lokasi</h4>
+        <p className="text-sm leading-relaxed text-[#001B3D]/70 font-sans">
+          pujasera, Jl. Tawang Argo, Lawang<br />
+          Kec. Lawang, Kabupaten Malang<br />
+          Jawa Timur
         </p>
       </div>
     </div>
     <div className="max-w-6xl mx-auto mt-20 pt-8 border-t border-[#001B3D]/5 text-[10px] uppercase tracking-widest text-[#001B3D]/30 text-center">
-      &copy; 2024 Ruang Seduh. Diseduh dengan hati.
+      &copy; 2024 Kedai Senggani. Diseduh dengan hati.
     </div>
   </footer>
 );
