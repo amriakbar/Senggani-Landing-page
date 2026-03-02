@@ -50,8 +50,8 @@ export const Philosophy = () => (
     <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
       <div className="relative aspect-[3/4] rounded-[40px] overflow-hidden shadow-2xl">
         <img 
-          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1000" 
-          alt="Proses penuangan kopi manual brew yang presisi" 
+          src="https://picsum.photos/seed/senggani-philosophy/1000/1333" 
+          alt="Filosofi Kedai Senggani" 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
