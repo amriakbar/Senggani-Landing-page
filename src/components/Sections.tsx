@@ -52,8 +52,9 @@ export const Philosophy = () => (
       <div className="relative aspect-[3/4] rounded-[40px] overflow-hidden shadow-2xl">
         <img 
           src="https://res.cloudinary.com/dktlodsrs/image/upload/v1772436189/IMG_20260302_122128_814_pjmtvx.jpg" 
-          alt="Filosofi Kedai Senggani" 
+          alt="Biji kopi pilihan dan proses manual brew di Kedai Senggani Lawang" 
           className="w-full h-full object-cover"
+          loading="lazy"
           referrerPolicy="no-referrer"
         />
       </div>
@@ -110,8 +111,9 @@ export const Story = () => (
           >
             <img 
               src="https://res.cloudinary.com/dktlodsrs/image/upload/v1772438042/VideoCapture_20260302-145033_ryrjpd.jpg" 
-              alt="Kisah Kedai Senggani" 
+              alt="Sejarah dan suasana hangat Kedai Senggani di Lawang Malang" 
               className="w-full h-full object-cover"
+              loading="lazy"
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -150,8 +152,9 @@ export const Gallery = () => {
             >
               <img 
                 src={img.url} 
-                alt={img.alt} 
+                alt={`${img.alt} - Galeri suasana Kedai Senggani Lawang`} 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
