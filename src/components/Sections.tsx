@@ -108,8 +108,8 @@ export const Story = () => (
             className="aspect-square rounded-[40px] overflow-hidden shadow-2xl relative z-10"
           >
             <img 
-              src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=1000" 
-              alt="Suasana kedai kopi yang hangat" 
+              src="https://res.cloudinary.com/dktlodsrs/image/upload/v1772438042/VideoCapture_20260302-145033_ryrjpd.jpg" 
+              alt="Kisah Kedai Senggani" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
