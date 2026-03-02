@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { MapPin, Clock, ZapOff, Users, CloudRain, Instagram } from "lucide-react";
-import { MENU_DATA, TESTIMONIALS_DATA, CONTACT_DATA } from "../constants";
+import { MENU_DATA, TESTIMONIALS_DATA, CONTACT_DATA, GALLERY_DATA } from "../constants";
 
 export const Navbar = () => (
   <nav className="fixed top-0 left-0 w-full z-50 px-6 py-8 flex justify-between items-center mix-blend-difference text-white" role="navigation" aria-label="Main Navigation">
@@ -8,6 +8,7 @@ export const Navbar = () => (
     <div className="hidden md:flex gap-8 text-xs uppercase tracking-widest font-sans font-semibold">
       <a href="#philosophy" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Filosofi</a>
       <a href="#story" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Kisah</a>
+      <a href="#gallery" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Galeri</a>
       <a href="#menu" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Menu</a>
       <a href="#space" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Ruang</a>
       <a href="#testimonials" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Testimoni</a>
@@ -120,6 +121,47 @@ export const Story = () => (
     </div>
   </section>
 );
+
+export const Gallery = () => {
+  // Duplicate the array for seamless infinite scroll
+  const duplicatedGallery = [...GALLERY_DATA, ...GALLERY_DATA];
+
+  return (
+    <section id="gallery" className="py-32 bg-white overflow-hidden" aria-labelledby="gallery-heading">
+      <div className="max-w-6xl mx-auto px-6 mb-16">
+        <span className="text-[10px] uppercase tracking-[0.3em] text-[#001B3D]/40 mb-4 block font-sans font-bold">Suasana</span>
+        <h2 id="gallery-heading" className="text-5xl font-serif italic text-[#001B3D]">Sudut <span className="text-[#FACC15]">Senggani</span>.</h2>
+      </div>
+
+      <div className="relative flex overflow-hidden">
+        <motion.div 
+          className="flex gap-6 px-6"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ 
+            duration: 40, 
+            ease: "linear", 
+            repeat: Infinity 
+          }}
+        >
+          {duplicatedGallery.map((img, i) => (
+            <div 
+              key={i} 
+              className="relative flex-shrink-0 w-[300px] md:w-[450px] aspect-[4/3] rounded-[32px] overflow-hidden shadow-lg group"
+            >
+              <img 
+                src={img.url} 
+                alt={img.alt} 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
 
 export const Constraints = () => (
   <section id="space" className="py-32 px-6 bg-[#001B3D] text-white overflow-hidden" aria-labelledby="space-heading">
