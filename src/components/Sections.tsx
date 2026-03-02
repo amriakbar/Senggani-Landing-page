@@ -50,7 +50,7 @@ export const Philosophy = () => (
     <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
       <div className="relative aspect-[3/4] rounded-[40px] overflow-hidden shadow-2xl">
         <img 
-          src="https://photos.app.goo.gl/pqVYvbvCUWqGiP259" 
+          src="https://drive.google.com/file/d/1AXopgNV2jAAM75zB25QeTYLrO9UAK51v/view?usp=drivesdk" 
           alt="Filosofi Kedai Senggani" 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
