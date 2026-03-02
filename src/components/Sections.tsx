@@ -325,7 +325,13 @@ export const Footer = () => (
           Tempat kecil untuk jiwa yang besar. Datanglah untuk kopi, pulanglah dengan ketenangan.
         </p>
         <div className="flex gap-4">
-          <a href="#" aria-label="Ikuti kami di Instagram" className="w-10 h-10 rounded-full border border-[#001B3D]/10 flex items-center justify-center hover:bg-[#001B3D] hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-[#001B3D]">
+          <a 
+            href={CONTACT_DATA.instagram} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Ikuti kami di Instagram" 
+            className="w-10 h-10 rounded-full border border-[#001B3D]/10 flex items-center justify-center hover:bg-[#001B3D] hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-[#001B3D]"
+          >
             <Instagram size={18} aria-hidden="true" />
           </a>
           <a href={CONTACT_DATA.mapsUrl} aria-label="Lihat lokasi kami di peta" className="w-10 h-10 rounded-full border border-[#001B3D]/10 flex items-center justify-center hover:bg-[#001B3D] hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-[#001B3D]">

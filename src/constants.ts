@@ -25,7 +25,7 @@ export const TESTIMONIALS_DATA = [
 export const CONTACT_DATA = {
   address: "pujasera, Jl. Tawang Argo, Lawang, Kec. Lawang, Kabupaten Malang, Jawa Timur",
   hours: "Setiap Hari, 09:00 - 00:00",
-  instagram: "#",
+  instagram: "https://www.instagram.com/kedai.senggani?igsh=bjZnMmJzaWV6bXd6",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=pujasera+Jl.+Tawang+Argo+Lawang+Malang",
   embedUrl: "https://maps.google.com/maps?q=pujasera%20Jl.%20Tawang%20Argo%20Lawang%20Malang&t=&z=17&ie=UTF8&iwloc=&output=embed"
 };
