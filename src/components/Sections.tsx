@@ -166,38 +166,38 @@ export const Gallery = () => {
   );
 };
 
-export const Constraints = () => (
+export const SpaceExperience = () => (
   <section id="space" className="py-32 px-6 bg-[#001B3D] text-white overflow-hidden" aria-labelledby="space-heading">
     <div className="max-w-6xl mx-auto">
       <div className="mb-20 text-center">
-        <h2 id="space-heading" className="text-5xl font-serif mb-6 italic">Ruang yang Intim.</h2>
+        <h2 id="space-heading" className="text-5xl font-serif mb-6 italic">Kenyamanan yang Personal.</h2>
         <p className="text-white/60 max-w-2xl mx-auto">
-          Kami bukan tempat untuk bekerja seharian. Kami adalah tempat untuk bercakap, membaca buku, atau sekadar melamun.
+          Kami menghadirkan ruang yang dirancang khusus untuk Anda yang menghargai kualitas waktu, ketenangan, dan koneksi nyata.
         </p>
       </div>
       
       <div className="grid md:grid-cols-3 gap-12">
         <div className="p-8 border border-white/10 rounded-3xl space-y-4 hover:bg-white/5 transition-colors group">
           <ZapOff className="w-8 h-8 text-[#FACC15] group-hover:scale-110 transition-transform" aria-hidden="true" />
-          <h3 className="text-2xl font-serif italic">Limit Colokan</h3>
+          <h3 className="text-2xl font-serif italic">Fokus & Koneksi</h3>
           <p className="text-sm text-white/50 leading-relaxed">
-            Lupakan laptop Anda sejenak. Gunakan waktu ini untuk mengisi ulang energi diri sendiri, bukan baterai gadget.
+            Nikmati momen "digital detox" yang menyegarkan. Ruang kami mengundang Anda untuk melepas penat dari layar dan kembali terhubung dengan diri sendiri atau teman bicara.
           </p>
         </div>
         
         <div className="p-8 border border-white/10 rounded-3xl space-y-4 hover:bg-white/5 transition-colors group">
           <Users className="w-8 h-8 text-[#FACC15] group-hover:scale-110 transition-transform" aria-hidden="true" />
-          <h3 className="text-2xl font-serif italic">7 Kursi Saja</h3>
+          <h3 className="text-2xl font-serif italic">Privasi Eksklusif</h3>
           <p className="text-sm text-white/50 leading-relaxed">
-            Kapasitas terbatas memastikan setiap tamu mendapatkan ketenangan yang mereka cari. Eksklusif dan personal.
+            Dengan kapasitas yang terjaga, kami menjamin suasana yang tenang dan tidak bising. Tempat yang sempurna bagi Anda yang mencari privasi di tengah kota Lawang.
           </p>
         </div>
         
         <div className="p-8 border border-white/10 rounded-3xl space-y-4 hover:bg-white/5 transition-colors group">
           <CloudRain className="w-8 h-8 text-[#FACC15] group-hover:scale-110 transition-transform" aria-hidden="true" />
-          <h3 className="text-2xl font-serif italic">Teduh Saat Hujan</h3>
+          <h3 className="text-2xl font-serif italic">Sudut Intim & Hangat</h3>
           <p className="text-sm text-white/50 leading-relaxed">
-            Saat hujan turun, ruang indoor kami menjadi tempat paling hangat untuk 6-7 orang yang beruntung.
+            Ruang indoor kami menawarkan kehangatan ekstra untuk kelompok kecil yang ingin berbagi cerita dengan lebih dekat, terutama saat suasana syahdu menyelimuti Lawang.
           </p>
         </div>
       </div>
