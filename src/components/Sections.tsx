@@ -207,28 +207,35 @@ export const SpaceExperience = () => (
 
 export const Menu = () => (
   <section id="menu" className="py-32 px-6 bg-[#F8FAFC]" aria-labelledby="menu-heading">
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-6xl mx-auto">
       <div className="text-center mb-20">
         <span className="text-[10px] uppercase tracking-[0.3em] text-[#001B3D]/40 mb-4 block font-sans font-bold">Menu Unggulan</span>
         <h2 id="menu-heading" className="text-6xl font-serif italic text-[#001B3D]">Signature Senggani.</h2>
       </div>
       
-      <div className="space-y-12">
+      <div className="grid md:grid-cols-3 gap-12">
         {MENU_DATA.map((item, i) => (
           <motion.div 
             key={i} 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="flex justify-between items-end border-b border-[#001B3D]/10 pb-4 group cursor-default" 
+            className="group flex flex-col items-center text-center" 
             role="listitem"
           >
-            <div>
-              <h3 className="text-2xl font-sans font-bold group-hover:italic transition-all text-[#001B3D]">{item.name}</h3>
-              <p className="text-sm font-sans text-[#001B3D]/40">{item.desc}</p>
+            <div className="relative w-full aspect-square rounded-[32px] overflow-hidden shadow-xl mb-8">
+              <img 
+                src={item.image} 
+                alt={`${item.name} - ${item.desc}`} 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-[#001B3D]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
-            <span className="text-xl font-sans font-bold text-[#001B3D]">{item.price}</span>
+            <h3 className="text-2xl font-serif italic text-[#001B3D] mb-2">{item.name}</h3>
+            <p className="text-sm font-sans text-[#001B3D]/50 max-w-[250px]">{item.desc}</p>
           </motion.div>
         ))}
       </div>

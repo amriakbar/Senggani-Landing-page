@@ -1,7 +1,19 @@
 export const MENU_DATA = [
-  { name: "Kopi Susu Senggani", price: "9K", desc: "Signature blend dengan rasa yang otentik." },
-  { name: "Es Kopi Susu Panas Senggani", price: "11K", desc: "Sensasi unik kopi susu yang menyegarkan." },
-  { name: "Kopi Butter", price: "11K", desc: "Kombinasi gurih butter dan kopi pilihan." },
+  { 
+    name: "Kopi Susu Senggani", 
+    image: "https://res.cloudinary.com/dktlodsrs/image/upload/v1772547786/SengganiSusu_radpab.jpg",
+    desc: "Signature blend dengan rasa yang otentik." 
+  },
+  { 
+    name: "Es Kopi Susu Panas Senggani", 
+    image: "https://res.cloudinary.com/dktlodsrs/image/upload/v1772547786/EsKopiPanas_sw3vby.jpg",
+    desc: "Sensasi unik kopi susu yang menyegarkan." 
+  },
+  { 
+    name: "Kopi Butter", 
+    image: "https://res.cloudinary.com/dktlodsrs/image/upload/v1772547786/KopiButter_phhp9g.jpg",
+    desc: "Kombinasi gurih butter dan kopi pilihan." 
+  },
 ];
 
 export const TESTIMONIALS_DATA = [
