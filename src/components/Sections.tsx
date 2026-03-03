@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { MapPin, Clock, ZapOff, Users, CloudRain, Instagram } from "lucide-react";
+import { MapPin, Clock, Wifi, Users, CloudRain, Instagram, MessageCircle, HelpCircle } from "lucide-react";
 import { MENU_DATA, TESTIMONIALS_DATA, CONTACT_DATA, GALLERY_DATA } from "../constants";
 
 export const Navbar = () => (
@@ -12,6 +12,7 @@ export const Navbar = () => (
       <a href="#menu" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Menu</a>
       <a href="#space" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Ruang</a>
       <a href="#testimonials" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Testimoni</a>
+      <a href="#faq" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">FAQ</a>
       <a href="#location" className="hover:text-[#FACC15] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FACC15] rounded-sm">Lokasi</a>
     </div>
   </nav>
@@ -25,11 +26,11 @@ export const Hero = () => (
       transition={{ duration: 0.8 }}
       className="max-w-4xl"
     >
-      <h1 id="hero-heading" className="text-7xl md:text-9xl font-serif font-bold leading-none tracking-tight text-white mb-8">
-        Mampir di <span className="italic text-[#FACC15]">Senggani</span>.
+      <h1 id="hero-heading" className="text-6xl md:text-8xl font-serif font-bold leading-tight tracking-tight text-white mb-8">
+        Kedai Senggani: <span className="italic text-[#FACC15]">Kopi Manual Brew</span> & Suasana Tenang di Lawang.
       </h1>
       <p className="text-lg md:text-xl font-sans font-light text-white/70 max-w-xl mx-auto leading-relaxed">
-        Sebuah jeda kecil di tengah hiruk pikuk. Kami tidak punya Wi-Fi, tapi kami punya seduhan yang jujur.
+        Sebuah jeda kecil di tengah hiruk pikuk. Nikmati seduhan yang jujur dengan fasilitas Wi-Fi yang nyaman.
       </p>
     </motion.div>
     
@@ -60,7 +61,7 @@ export const Philosophy = () => (
       </div>
       <div className="space-y-8">
         <h2 id="philosophy-heading" className="text-5xl font-serif leading-tight text-[#001B3D]">
-          Fokus pada <span className="italic">Esensi</span>.
+          Fokus pada <span className="italic">Esensi Kopi</span> Manual Brew.
         </h2>
         <p className="text-lg text-[#001B3D]/70 leading-relaxed">
           Di Kedai Senggani, kami percaya bahwa kopi terbaik lahir dari ketenangan. Kami tidak menyediakan makanan pendamping agar lidah Anda bisa sepenuhnya mengecap karakter unik dari setiap biji kopi yang kami pilih.
@@ -87,7 +88,7 @@ export const Story = () => (
         <div className="order-2 md:order-1 space-y-8">
           <span className="text-[10px] uppercase tracking-[0.3em] text-[#001B3D]/40 block font-sans font-bold">Asal Usul</span>
           <h2 id="story-heading" className="text-5xl font-serif leading-tight text-[#001B3D]">
-            Kisah di Balik <span className="italic">Senggani</span>.
+            Kisah Kedai Kopi <span className="italic">Senggani</span> di Lawang.
           </h2>
           <div className="space-y-6 text-lg text-[#001B3D]/70 leading-relaxed font-sans">
             <p>
@@ -178,10 +179,10 @@ export const SpaceExperience = () => (
       
       <div className="grid md:grid-cols-3 gap-12">
         <div className="p-8 border border-white/10 rounded-3xl space-y-4 hover:bg-white/5 transition-colors group">
-          <ZapOff className="w-8 h-8 text-[#FACC15] group-hover:scale-110 transition-transform" aria-hidden="true" />
-          <h3 className="text-2xl font-serif italic">Fokus & Koneksi</h3>
+          <Wifi className="w-8 h-8 text-[#FACC15] group-hover:scale-110 transition-transform" aria-hidden="true" />
+          <h3 className="text-2xl font-serif italic">Koneksi & Fokus</h3>
           <p className="text-sm text-white/50 leading-relaxed">
-            Nikmati momen "digital detox" yang menyegarkan. Ruang kami mengundang Anda untuk melepas penat dari layar dan kembali terhubung dengan diri sendiri atau teman bicara.
+            Tetap terhubung dengan fasilitas Wi-Fi kami yang stabil. Ruang kami dirancang agar Anda tetap produktif namun tetap bisa menikmati ketenangan seduhan kopi.
           </p>
         </div>
         
@@ -210,10 +211,10 @@ export const Menu = () => (
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-20">
         <span className="text-[10px] uppercase tracking-[0.3em] text-[#001B3D]/40 mb-4 block font-sans font-bold">Menu Unggulan</span>
-        <h2 id="menu-heading" className="text-6xl font-serif italic text-[#001B3D]">Signature Senggani.</h2>
+        <h2 id="menu-heading" className="text-6xl font-serif italic text-[#001B3D]">Menu Kopi Unggulan.</h2>
       </div>
       
-      <div className="grid md:grid-cols-3 gap-12">
+      <div className="grid md:grid-cols-3 gap-12 mb-20">
         {MENU_DATA.map((item, i) => (
           <motion.div 
             key={i} 
@@ -238,6 +239,24 @@ export const Menu = () => (
             <p className="text-sm font-sans text-[#001B3D]/50 max-w-[250px]">{item.desc}</p>
           </motion.div>
         ))}
+      </div>
+
+      <div className="flex justify-center">
+        <motion.a
+          href={CONTACT_DATA.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-3 bg-[#25D366] text-white px-10 py-5 rounded-full font-sans font-bold uppercase tracking-widest shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-4 focus:ring-[#25D366]/50"
+          aria-label="Pesan via WhatsApp: Sapa barista kami"
+        >
+          <MessageCircle size={24} />
+          <span>Sapa barista kami</span>
+        </motion.a>
       </div>
     </div>
   </section>
@@ -272,6 +291,55 @@ export const Testimonials = () => (
   </section>
 );
 
+export const FAQ = () => (
+  <section id="faq" className="py-32 px-6 bg-[#F8FAFC]" aria-labelledby="faq-heading">
+    <div className="max-w-4xl mx-auto">
+      <div className="text-center mb-20">
+        <span className="text-[10px] uppercase tracking-[0.3em] text-[#001B3D]/40 mb-4 block font-sans font-bold">Tanya Jawab</span>
+        <h2 id="faq-heading" className="text-5xl font-serif italic text-[#001B3D]">Seputar Kedai Senggani.</h2>
+      </div>
+      
+      <div className="space-y-8">
+        {[
+          {
+            q: "Di mana lokasi Kedai Senggani?",
+            a: "Kami berlokasi di area Pujasera, Jl. Tawang Argo, Lawang, Kabupaten Malang. Tempat kami berada di sudut yang tenang untuk menjamin kenyamanan Anda."
+          },
+          {
+            q: "Apa menu unggulan di sini?",
+            a: "Signature kami adalah Kopi Susu Senggani, Es Kopi Susu Panas, dan Kopi Butter. Kami fokus pada teknik manual brew untuk menjaga kualitas rasa."
+          },
+          {
+            q: "Apakah tersedia fasilitas Wi-Fi?",
+            a: "Ya, kami menyediakan fasilitas Wi-Fi gratis bagi pengunjung untuk mendukung kenyamanan Anda saat berkunjung atau bekerja santai."
+          },
+          {
+            q: "Kapan jam operasional Kedai Senggani?",
+            a: "Kami buka setiap hari mulai pukul 09:00 pagi hingga 00:00 tengah malam."
+          }
+        ].map((item, i) => (
+          <motion.div 
+            key={i}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="p-8 bg-white rounded-3xl shadow-sm border border-[#001B3D]/5"
+          >
+            <div className="flex gap-4">
+              <HelpCircle className="w-6 h-6 text-[#FACC15] shrink-0" />
+              <div>
+                <h3 className="text-xl font-serif italic text-[#001B3D] mb-3">{item.q}</h3>
+                <p className="text-[#001B3D]/60 leading-relaxed font-sans">{item.a}</p>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 export const MapSection = () => (
   <section id="location" className="py-32 px-6 bg-white" aria-labelledby="location-heading">
     <div className="max-w-6xl mx-auto">
@@ -279,7 +347,7 @@ export const MapSection = () => (
         <div className="space-y-8 order-2 md:order-1">
           <span className="text-[10px] uppercase tracking-[0.3em] text-[#001B3D]/40 block">Temukan Kami</span>
           <h2 id="location-heading" className="text-5xl font-serif leading-tight text-[#001B3D]">
-            Di Sudut <span className="italic">Tenang</span> Kota.
+            Lokasi Kedai Senggani <span className="italic">Lawang</span>.
           </h2>
           <p className="text-lg text-[#001B3D]/70 leading-relaxed">
             Kami berlokasi di area yang cukup tersembunyi untuk menjamin ketenangan Anda. Gunakan peta di samping untuk menemukan jalan menuju cangkir kopi Anda di Kedai Senggani.
@@ -326,6 +394,29 @@ export const MapSection = () => (
   </section>
 );
 
+export const FloatingWhatsApp = () => (
+  <motion.a
+    href={CONTACT_DATA.whatsapp}
+    target="_blank"
+    rel="noopener noreferrer"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    whileHover={{ scale: 1.1, rotate: 5 }}
+    whileTap={{ scale: 0.9 }}
+    className="fixed bottom-8 right-8 z-[100] w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-[#20ba5a] transition-colors focus:outline-none focus:ring-4 focus:ring-[#25D366]/50"
+    aria-label="Sapa barista kami di WhatsApp"
+    title="Sapa barista kami"
+  >
+    <MessageCircle size={32} />
+    <motion.span 
+      initial={{ opacity: 0, x: 10 }}
+      whileHover={{ opacity: 1, x: 0 }}
+      className="absolute right-20 bg-white text-[#001B3D] px-4 py-2 rounded-lg text-xs font-bold whitespace-nowrap shadow-lg pointer-events-none"
+    >
+      Sapa barista kami
+    </motion.span>
+  </motion.a>
+);
 export const Footer = () => (
   <footer className="bg-white py-20 px-6 border-t border-[#001B3D]/5" role="contentinfo">
     <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-12">
@@ -343,6 +434,15 @@ export const Footer = () => (
             className="w-10 h-10 rounded-full border border-[#001B3D]/10 flex items-center justify-center hover:bg-[#001B3D] hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-[#001B3D]"
           >
             <Instagram size={18} aria-hidden="true" />
+          </a>
+          <a 
+            href={CONTACT_DATA.whatsapp} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Hubungi kami via WhatsApp" 
+            className="w-10 h-10 rounded-full border border-[#001B3D]/10 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-[#25D366]"
+          >
+            <MessageCircle size={18} aria-hidden="true" />
           </a>
           <a href={CONTACT_DATA.mapsUrl} aria-label="Lihat lokasi kami di peta" className="w-10 h-10 rounded-full border border-[#001B3D]/10 flex items-center justify-center hover:bg-[#001B3D] hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-[#001B3D]">
             <MapPin size={18} aria-hidden="true" />

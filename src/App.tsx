@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Navbar, Hero, Philosophy, Story, Gallery, SpaceExperience, Menu, Testimonials, MapSection, Footer } from "./components/Sections";
+import { Navbar, Hero, Philosophy, Story, Gallery, SpaceExperience, Menu, Testimonials, FAQ, MapSection, Footer, FloatingWhatsApp } from "./components/Sections";
 
 export default function App() {
   return (
@@ -17,9 +17,11 @@ export default function App() {
         <SpaceExperience />
         <Menu />
         <Testimonials />
+        <FAQ />
         <MapSection />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
