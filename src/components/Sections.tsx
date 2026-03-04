@@ -26,8 +26,8 @@ export const Hero = () => (
       transition={{ duration: 0.8 }}
       className="max-w-4xl"
     >
-      <h1 id="hero-heading" className="text-6xl md:text-8xl font-serif font-bold leading-tight tracking-tight text-white mb-8">
-        Kedai Senggani | <span className="italic text-[#FACC15]">Kopi Manual Brew</span> & Suasana Tenang di Lawang.
+      <h1 id="hero-heading" className="text-4xl md:text-6xl font-serif font-bold leading-tight tracking-tight text-white mb-8">
+        Kedai Senggani: <span className="italic text-[#FACC15]">Kopi Manual Brew</span> & Suasana Tenang di Lawang.
       </h1>
       <p className="text-lg md:text-xl font-sans font-light text-white/70 max-w-xl mx-auto leading-relaxed">
         Sebuah jeda kecil di tengah hiruk pikuk. Nikmati seduhan yang jujur dengan fasilitas Wi-Fi yang nyaman.
